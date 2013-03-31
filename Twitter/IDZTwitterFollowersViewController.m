@@ -208,7 +208,7 @@
     }
     else
     {
-        NSString *dataAsString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+//        NSString *dataAsString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         NSDictionary* jsonSerialization = [NSJSONSerialization
                                            JSONObjectWithData:data
                                            options:NSJSONReadingMutableLeaves

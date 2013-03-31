@@ -24,10 +24,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "IDZAvatarDownloader.h"
 @class DetailViewController;
 
-@interface IDZTwitterFollowersViewController : UITableViewController
+@interface IDZTwitterFollowersViewController : UITableViewController<IDZAvatarDownloader>
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 
