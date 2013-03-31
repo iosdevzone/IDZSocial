@@ -56,6 +56,18 @@
 	// Do any additional setup after loading the view, typically from a nib.
     ACAccountStore* accountStore = [[ACAccountStore alloc] init];
     ACAccountType* accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+    /*
+     * It's not clear from Apple's documentation whether this call will succeed if access has not 
+     * been granted.
+     */
+    NSArray* twitterAccounts = [accountStore accountsWithAccountType:accountType];
+    if(twitterAccounts.count == 0)
+    {
+        NSLog(@"No accounts set up?.");
+    }
+    /*
+     * On the simulator, if there are no twitter accounts set, this request will always return access denied.
+     */
     [accountStore requestAccessToAccountsWithType:accountType options:nil completion:^(BOOL granted, NSError* error)
      {
          if(granted)
